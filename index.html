@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการทำงาน (Curriculum Vitae)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Sarabun & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            700: '#1e3a8a',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        slateCustom: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Sarabun', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #334155;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Custom Scrollbar for modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .cv-container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .page-break {
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+        }
+    </style>
+</head>
+<body class="py-8 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-between items-center">
+
+    <!-- Main CV Container -->
+    <main class="cv-container w-full max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-gray-100">
+        
+        <!-- LEFT SIDEBAR (4 Columns on MD) -->
+        <aside class="md:col-span-4 bg-navy-900 text-white p-6 sm:p-8 flex flex-col justify-between space-y-8">
+            <div class="space-y-6">
+                <!-- Profile Picture -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-inner mb-4">
+                        <img 
+                            src="IMG_0325.png" 
+                            alt="รูปถ่ายโปรไฟล์" 
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Profile+Photo';"
+                        />
+                    </div>
+                    <!-- Name & Title for Mobile View (Hidden on desktop sidebar header since it goes nicely) -->
+                    <h1 class="text-2xl font-bold text-white tracking-wide">อรณิชชา คำนวน</h1>
+                    <p class="text-blue-300 font-medium text-sm mt-1">นักศึกษาแผนกเทคโนโลยีสารสนเทศ</p>
+                </div>
+
+                <hr class="border-gray-700/60 my-4" />
+
+                <!-- Contact Information -->
+                <div class="space-y-4">
+                    <h2 class="text-xs uppercase tracking-widest text-blue-400 font-bold border-b border-gray-700/60 pb-2">
+                        ข้อมูลการติดต่อ
+                    </h2>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-envelope text-blue-400 mt-1 w-4 text-center"></i>
+                            <span class="break-all">aonnicchac@gmail.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-blue-400 w-4 text-center"></i>
+                            <span>098-884-8863</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-blue-400 mt-1 w-4 text-center"></i>
+                            <span>กระบี่, ประเทศไทย</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-brands fa-github text-blue-400 w-4 text-center"></i>
+                            <a href="https://github.com" target="_blank" class="hover:text-blue-300 transition-colors">github.com/Aonniccha</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hard & Soft Skills -->
+                <div class="space-y-4 page-break">
+                    <h2 class="text-xs uppercase tracking-widest text-blue-400 font-bold border-b border-gray-700/60 pb-2">
+                        ทักษะความเชี่ยวชาญ
+                    </h2>
+                    
+                    <!-- Hard Skills -->
+                    <div class="space-y-3">
+                        <p class="text-xs text-gray-400 font-semibold uppercase">ด้านเทคโนโลยีและการบริหาร</p>
+                        
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Agile & Scrum Management</span>
+                                <span class="text-blue-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>System Architecture Design</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Cloud Computing (AWS/Azure)</span>
+                                <span class="text-blue-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Data Analytics & SQL</span>
+                                <span class="text-blue-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills Badges -->
+                    <div class="space-y-2 pt-2">
+                        <p class="text-xs text-gray-400 font-semibold uppercase">ทักษะการทำงาน (Soft Skills)</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-700">ภาวะผู้นำ (Leadership)</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-700">การแก้ปัญหาเชิงวิเคราะห์</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-700">การสื่อสารองค์กร</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-700">การบริหารความเสี่ยง</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="space-y-3 page-break">
+                    <h2 class="text-xs uppercase tracking-widest text-blue-400 font-bold border-b border-gray-700/60 pb-2">
+                        ทักษะทางภาษา
+                    </h2>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-300">ภาษาไทย</span>
+                            <span class="text-xs bg-blue-900/80 text-blue-300 px-2 py-0.5 rounded border border-blue-700/50">เจ้าของภาษา</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-300">ภาษาอังกฤษ</span>
+                            <span class="text-xs bg-blue-900/80 text-blue-300 px-2 py-0.5 rounded border border-blue-700/50">ระดับปานกลาง</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Certifications -->
+                <div class="space-y-3 page-break">
+                    <h2 class="text-xs uppercase tracking-widest text-blue-400 font-bold border-b border-gray-700/60 pb-2">
+                        ใบรับรองวิชาชีพ (Certificates)
+                    </h2>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-award text-yellow-400 mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-white">Project Management Professional (PMP)®</p>
+                                <p class="text-gray-400">PMI Institute, 2022</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-award text-yellow-400 mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-white">Certified Scrum Master (CSM)</p>
+                                <p class="text-gray-400">Scrum Alliance, 2021</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-award text-yellow-400 mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-white">AWS Certified Solutions Architect</p>
+                                <p class="text-gray-400">Amazon Web Services, 2020</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="text-xs text-gray-400 text-center pt-4 border-t border-gray-800">
+                <p>อัปเดตล่าสุด: ตุลาคม 2026</p>
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT (8 Columns on MD) -->
+        <section class="md:col-span-8 p-6 sm:p-10 bg-white flex flex-col justify-between space-y-8">
+            <div class="space-y-8">
+                
+                <!-- Main Header / Name Banner for Main Content -->
+                <div class="border-b border-gray-200 pb-6 hidden sm:block">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">อรณิชชา คำนวน (Aonniccha Camnuan)</h1>
+                    <p class="text-lg font-semibold text-navy-700 mt-1">นักศึกษาแผนกเทคโนโลยีสารสนเทศ</p>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 text-navy-800 border-b-2 border-navy-700 pb-2">
+                        <i class="fa-solid fa-user-tie text-lg"></i>
+                        <h2 class="text-lg font-bold uppercase tracking-wide">ประวัติโดยย่อ (Professional Summary)</h2>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify">
+                       นักศึกษาแผนกเทคโนโลยีสารสนเทศที่มีความชื่นชอบด้านเทคโนโลยีและคอมพิวเตอร์ มีทักษะพื้นฐานด้านการเขียนโปรแกรม การจัดทำเอกสารทางเทคนิค และการแก้ปัญหาเฉพาะหน้าอย่างเป็นระบบ กำลังมองหาโอกาสในการพัฒนาทักษะผ่านการเรียนรู้และการฝึกประสบการณ์จริง เพื่อต่อยอดสู่การเป็นนักพัฒนาระบบมืออาชีพในอนาคต
+                    </p>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3 text-navy-800 border-b-2 border-navy-700 pb-2">
+                        <i class="fa-solid fa-briefcase text-lg"></i>
+                        <h2 class="text-lg font-bold uppercase tracking-wide">โปรเจกต์ระหว่างเรียน</h2>
+                    </div>
+
+                    <div class="space-y-6 relative border-l-2 border-gray-200 ml-3 pl-6">
+                        
+                        <!-- Job Item 1 -->
+                        <div class="relative page-break">
+                            <!-- Bullet Point Dot -->
+                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 bg-navy-700 rounded-full border-2 border-white"></div>
+                            
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h3 class="text-base font-bold text-navy-900">นักออกแบบเว็บไซต์ / UI/UX Designer (Web Designer)</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-navy-700 rounded-full w-fit mt-1 sm:mt-0">
+                                    2022 - ปัจจุบัน
+                                </span>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-500 mb-2">บริษัท ดิจิทัล ครีเอทีฟ สตูดิโอ จำกัด</p>
+                            
+                            <ul class="list-disc list-outside text-gray-600 text-sm space-y-1.5 ml-4">
+                                <li>รวบรวมและวิเคราะห์ความต้องการของลูกค้าเพื่อออกแบบโครงสร้างเว็บไซต์ (Information Architecture) และ Sitemap</li>
+                                <li>ออกแบบ Wireframe และ User Interface (UI) สำหรับโปรเจกต์ระดับองค์กรด้วย Figma โดยเน้นหลัก Responsive Design และ UX ที่ใช้งานง่าย</li>
+                                <li>สร้าง Design System และ Style Guide (Color Palette, Typography) เพื่อควบคุมมาตรฐานงานดีไซน์ให้ตรงตามอัตลักษณ์ของแบรนด์</li>
+                                <li>ประสานงานกับทีมนักพัฒนา (Developers) อย่างใกล้ชิดในการ Handover ไฟล์และสินทรัพย์ดิจิทัลเพื่อให้การพัฒนาเว็บไซต์ตรงตามบรีฟ 100%</li>
+                            </ul>
+                        </div>
+
+                        <!-- Job Item 2 -->
+                        <div class="relative page-break">
+                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 bg-navy-700 rounded-full border-2 border-white"></div>
+                            
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h3 class="text-base font-bold text-navy-900">นักออกแบบและพัฒนาเว็บไซต์ (Web Designer & Developer)</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full w-fit mt-1 sm:mt-0">
+                                    2019 - 2022
+                                </span>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-500 mb-2">บริษัท สยาม ซอฟต์แวร์ โซลูชั่นส์ จำกัด</p>
+                            
+                            <ul class="list-disc list-outside text-gray-600 text-sm space-y-1.5 ml-4">
+                                <li>ออกแบบและพัฒนาเว็บไซต์องค์กรและ E-Commerce บนระบบ WordPress และ Webflow รวมกว่า 20 โปรเจกต์</li>
+                                <li>ปรับปรุงการจัดวาง Layout และ Visual Hierarchy ของเว็บไซต์เดิม ส่งผลให้ค่า Bounce Rate ลดลง 30% และระยะเวลาบนหน้าเว็บเพิ่มขึ้น</li>
+                                <li>ทำการทดสอบ Usability Testing ร่วมกับผู้ใช้จริง เพื่อนำ Feedback มาปรับปรุง UI/UX ให้ตอบโจทย์เป้าหมายทางธุรกิจ</li>
+                            </ul>
+                        </div>
+
+                        <!-- Job Item 3 -->
+                        <div class="relative page-break">
+                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 bg-navy-700 rounded-full border-2 border-white"></div>
+                            
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h3 class="text-base font-bold text-navy-900">นักออกแบบกราฟิกและเว็บไซต์ (Graphic & Web Designer)</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full w-fit mt-1 sm:mt-0">
+                                    2017 - 2019
+                                </span>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-500 mb-2">บริษัท ดิจิทัล ครีเอทีฟ สตูดิโอ จำกัด</p>
+                            
+                            <ul class="list-disc list-outside text-gray-600 text-sm space-y-1.5 ml-4">
+                                <li>ออกแบบกราฟิก แบนเนอร์ และสื่อดิจิทัลสำหรับใช้งานบนเว็บไซต์และโซเชียลมีเดีย</li>
+                                <li>ออกแบบและดูแลหน้า Landing Page สำหรับแคมเปญการตลาดเพื่อเพิ่มอัตราการลงทะเบียน (Conversion Rate)</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="space-y-4 page-break">
+                    <div class="flex items-center space-x-3 text-navy-800 border-b-2 border-navy-700 pb-2">
+                        <i class="fa-solid fa-graduation-cap text-lg"></i>
+                        <h2 class="text-lg font-bold uppercase tracking-wide">ประวัติการศึกษา (Education)</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Degree 1 -->
+                        <div class="bg-slate-50 p-4 rounded-lg border border-gray-100 flex justify-between items-start">
+                            <div>
+                                <h3 class="text-base font-bold text-navy-900">มัธยมศึกษาปีที่1-3</h3>
+                                <p class="text-xs font-medium text-navy-700">โรงเรียนพนมเบญจา</p>
+                                <p class="text-xs text-gray-500 mt-1"> เกรดเฉลี่ย 3.82</p>
+                            </div>
+                            <span class="text-xs font-semibold text-gray-500 bg-white px-2.5 py-1 rounded border border-gray-200">
+                                2565 - 2567
+                            </span>
+                        </div>
+
+                        <!-- Degree 2 -->
+                        <div class="bg-slate-50 p-4 rounded-lg border border-gray-100 flex justify-between items-start">
+                            <div>
+                                <h3 class="text-base font-bold text-navy-900">นักศึกษาปวช1-3</h3>
+                                <p class="text-xs font-medium text-navy-700">วิทยาลัยเทคนิคกระบี่(แผนกเทคโนโลยีสารสนเทศ)</p>
+                                <p class="text-xs text-gray-500 mt-1">เกรดเฉลี่ย 3.65</p>
+                            </div>
+                            <span class="text-xs font-semibold text-gray-500 bg-white px-2.5 py-1 rounded border border-gray-200">
+                                2568 - ปัจจุบัน
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Projects & Achievements -->
+                <div class="space-y-4 page-break">
+                    <div class="flex items-center space-x-3 text-navy-800 border-b-2 border-navy-700 pb-2">
+                        <i class="fa-solid fa-trophy text-lg"></i>
+                        <h2 class="text-lg font-bold uppercase tracking-wide">ผลงานและโครงการเด่น (Key Projects)</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 p-4 rounded-lg bg-white">
+                            <h3 class="font-bold text-sm text-navy-900 mb-1 flex items-center">
+                                <i class="fa-solid fa-mobile-screen-button text-navy-700 mr-2"></i>
+                                Smart Banking App Refresh
+                            </h3>
+                            <p class="text-xs text-gray-600">
+                                นำทีมพัฒนาและออกแบบระบบ Mobile Banking ใหม่ รองรับผู้ใช้งานกว่า 1 ล้านรายต่อวัน มียอดดาวน์โหลดติดอันดับ 1 ใน App Store
+                            </p>
+                        </div>
+
+                        <div class="border border-gray-200 p-4 rounded-lg bg-white">
+                            <h3 class="font-bold text-sm text-navy-900 mb-1 flex items-center">
+                                <i class="fa-solid fa-cloud text-navy-700 mr-2"></i>
+                                Enterprise Cloud Migration
+                            </h3>
+                            <p class="text-xs text-gray-600">
+                                ย้ายระบบโครงสร้างพื้นฐานเดิมขึ้นระบบ AWS Cloud ช่วยลดต้นทุนค่าดูแลรักษาเซิร์ฟเวอร์ขององค์กรลงได้ถึง 30% ต่อปี
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
